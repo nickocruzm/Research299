@@ -12,7 +12,7 @@
 
 ## Inference Phase
 1. Pipeline samples random Gaussian noise in the *latent space*
-2. **U-Net** with learned weights, begins denoising step by step. $z_{t-1} = \text{Scheduler.step}()
+2. **U-Net** with learned weights, begins denoising step by step. $z_{t-1} = \text{Scheduler.step}()$
 3. After T steps you get a clean latent $z_{0}$, T approaches 0.
 4. The **VAE-decoder** then converts the $z_{0}$ into an RGB image $x_{0}$
 
