@@ -10,6 +10,12 @@
 5. Compute Loss
 6. Backpropagate (update the U-Net weights)
 
+## Inference Phase
+1. Pipeline samples random Gaussian noise in the *latent space*
+2. **U-Net** with learned weights, begins denoising step by step. $z_{t-1} = \text{Scheduler.step}()
+3. After T steps you get a clean latent $z_{0}$, T approaches 0.
+4. The **VAE-decoder** then converts the $z_{0}$ into an RGB image $x_{0}$
+
 ## Links
 Notebook: https://colab.research.google.com/drive/1cMkft2zsIJSDG_yn09G03TMd7qXU6SZh?usp=sharing
 
